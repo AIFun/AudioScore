@@ -8,7 +8,7 @@ int main(){
 	FFT ft;
 	
 	vector<complex<double> > vec;
-	for(int i = 0;i < 16; ++i){
+	for(int i = 0;i < 4; ++i){
 		vec.push_back(complex<double>(i * 1., 0.));
 	}
 
@@ -27,7 +27,6 @@ int main(){
 	v.push_back(3);
 	v.push_back(4);
 	cout << getMaxValue(v) << endl;
-
 
 	return 0;
 }

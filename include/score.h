@@ -1,25 +1,26 @@
-#ifndef SCORE_ENGINE
-#define SCORE_ENGINE
+#ifndef SCORE
+#define SCORE
 
-#include <complex>
 #include <vector>
+#include <string>
 
-class FFT{
-private:
-	std::vector<std::complex<double> > oriArr;
-	std::vector<std::complex<double> > ansArr;
-
-	vector<std::complex<double> > fft(std::vector<std::complex<double> >);
-
-public:
-	FFT();
-	~FFT();
-
-	bool update(std::vector<std::complex<double> > vecComp);
-	std::vector<std::complex<double> > get();
-	
+struct ScoreEntry{
+	double similar;
+	std::vector<std::string> words;
 };
 
+class Score{
+private:
+	ScoreEntry scoreEntry;	
+	std:string standAudioPath;
+	std::string userAudioPath;
+	std::string words;
+
+public:
+	ScoreEntry getSimilaAndWords();
+	bool update(std::string standAudioPath, std::string userAudioPath, std::string words);
+
+};
 
 
 #endif
